@@ -1,4 +1,4 @@
 # astronet
 
-## this is read me file for astronet google colab integration
+this is read_me file for astronet google colab integration
 
