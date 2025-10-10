@@ -1,4 +1,4 @@
 # astronet
 
-## this changes is made by second branch
+## this is read me file for astronet google colab integration
 
