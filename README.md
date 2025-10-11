@@ -68,20 +68,6 @@ See [colab_ver3_structure_chart.md](colab_ver3_structure_chart.md) for detailed 
 2. Upload Kepler data files to Google Drive in the `astronet_data` folder
 3. Run the training pipeline
 
-### Local Installation
-
-```bash
-git clone https://github.com/your-repo/astronet.git
-cd astronet
-pip install torch torchvision numpy pandas scikit-learn matplotlib tqdm
-```
-
-## Usage
-
-```python
-python colab_ver3.py
-```
-
 ## Data Requirements
 
 Each sample requires three files:
@@ -91,14 +77,6 @@ Each sample requires three files:
 
 Download Kepler data from [Google Drive](https://drive.google.com/file/d/1N6bA2rahvV5kcOGmJnTA5gl_Thno7hTh/view?usp=sharing) and organize into `train/`, `val/`, `test/` folders.
 
-## Performance
-
-### Version Comparison
-
-| Version | Epochs | Batch Size | Workers | Expected AP | Use Case |
-|---------|--------|------------|---------|-------------|----------|
-| **Original** | 225 | 64 | 4 | ~0.95 | Research baseline |
-| **colab_ver3** | 50 | 64 | 12 | ~0.90 | Google Colab optimized |
 
 ### Key Improvements over Original
 
@@ -143,40 +121,6 @@ Epoch 25/50: Train Loss=0.1234, Val Loss=0.1456, Val Acc=0.9234, Val AP=0.9456
 - `training_history.csv`: Training metrics per epoch
 - `training_results.pdf`: Visualization plots
 
-## File Structure
-
-```
-astronet/
-├── README.md                           # This file
-├── colab_ver3.py                      # Main implementation (907 lines)
-├── colab_ver3_structure_chart.md      # Detailed architecture documentation
-├── astronet_original.py               # Original PyTorch implementation (460 lines)
-├── exonet.py                          # Enhanced version with domain knowledge (563 lines)
-├── colab_ver1.py                      # First Colab version (468 lines)
-├── colab_ver2.py                      # Second Colab version (482 lines)
-├── README_original.md                 # Original AstroNet documentation
-└── README for exonet.md               # ExoNet documentation
-```
-
-## Scientific Applications
-
-### Research
-- Exoplanet detection algorithm development
-- Machine learning in astronomy
-- Transit detection methodology
-- Stellar variability analysis
-
-### Practical Discovery
-- **Kepler data analysis**: Process thousands of light curves
-- **TESS data adaptation**: Extend to TESS mission data
-- **Follow-up planning**: Prioritize telescope observations
-- **Discovery validation**: Confirm exoplanet candidates
-
-## Documentation
-
-- **[Architecture Details](colab_ver3_structure_chart.md)**: Complete system architecture
-- **[Original AstroNet](README_original.md)**: Original TensorFlow implementation
-- **[ExoNet Documentation](README%20for%20exonet.md)**: Enhanced version with domain knowledge
 
 ## Citation
 
@@ -198,7 +142,7 @@ If you use this work, please cite the original research and NASA FDL contributio
 }
 ```
 
-### NASA FDL PyTorch Translation
+### NASA FDL PyTorch Translation 
 ```bibtex
 @article{ansdell2018exoplanet,
   title={Exoplanet Detection with Machine Learning},
