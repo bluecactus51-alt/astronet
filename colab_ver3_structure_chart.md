@@ -3,35 +3,35 @@
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                    ASTRONET: Exoplanet Detection Pipeline                   │
-│                              (907 lines)                                   │
+│                              (907 lines)                                    │
 └─────────────────────────────────────────────────────────────────────────────┘
 sfsdfsdfwefwfsfsdfsf
 ┌─ IMPORTS & CONFIGURATION ───────────────────────────────────────────────────┐
-│ • Standard library (os, glob, shutil, zipfile, tarfile)                    │
-│ • Data science (numpy, pandas, tqdm)                                       │
-│ • PyTorch (torch, torch.nn, torch.optim, torch.utils.data)                 │
-│ • ML metrics (sklearn.metrics)                                             │
+│ • Standard library (os, glob, shutil, zipfile, tarfile)                     │
+│ • Data science (numpy, pandas, tqdm)                                        │
+│ • PyTorch (torch, torch.nn, torch.optim, torch.utils.data)                  │
+│ • ML metrics (sklearn.metrics)                                              │
 │ • Visualization (matplotlib)                                                │
-│ • Configuration (paths, hyperparameters)                                   │
+│ • Configuration (paths, hyperparameters)                                    │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ┌─ DATA PREPARATION ──────────────────────────────────────────────────────────┐
-│ check_existing_data()     → bool    │ Check if data already exists         │
-│ mount_google_drive()      → bool    │ Mount Google Drive (Colab)          │
-│ find_and_extract_data()   → bool    │ Extract compressed files             │
+│ check_existing_data()     → bool    │ Check if data already exists          │
+│ mount_google_drive()      → bool    │ Mount Google Drive (Colab)            │
+│ find_and_extract_data()   → bool    │ Extract compressed files              │
 │ organize_data()              → bool    │ Organize into train/val/test       │
 │ prepare_data()              → bool    │ Main data preparation orchestrator  │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ┌─ DATASET & MODEL ───────────────────────────────────────────────────────────┐
-│ KeplerDataset(Dataset)    │ PyTorch dataset for light curves              │
-│ ├─ __init__(data_path)    │ Initialize with data directory                 │
-│ ├─ __len__()             │ Return number of samples                       │
-│ └─ __getitem__(idx)      │ Return (data, label, sample_id)               │
-│                                                                           │
-│ AstroNet(nn.Module)      │ Two-branch CNN architecture                   │
-│ ├─ global_branch         │ Process full light curve (2001 points)        │
-│ ├─ local_branch          │ Process transit view (201 points)              │
+│ KeplerDataset(Dataset)    │ PyTorch dataset for light curves                │
+│ ├─ __init__(data_path)    │ Initialize with data directory                  │
+│ ├─ __len__()             │ Return number of samples                         │
+│ └─ __getitem__(idx)      │ Return (data, label, sample_id)                  │
+│                                                                             │
+│ AstroNet(nn.Module)      │ Two-branch CNN architecture                      │
+│ ├─ global_branch         │ Process full light curve (2001 points)           │
+│ ├─ local_branch          │ Process transit view (201 points)                │
 │ ├─ classifier            │ Fusion + classification layers               │
 │ └─ forward()             │ Return exoplanet probability                  │
 └─────────────────────────────────────────────────────────────────────────────┘
